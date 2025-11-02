@@ -1,26 +1,78 @@
-@import "tailwindcss";
-
+/* app/globals.css */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #0b0c10;
+  --card: #121318;
+  --text: #e8eaf0;
+  --muted: #aab2c0;
+  --accent: #5ea1ff;
+  --border: #1f2330;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% -10%, #1b2337 0%, transparent 60%) , var(--bg);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 56px 20px 28px;
+}
+
+.intro h1 {
+  font-size: clamp(28px, 3.5vw, 40px);
+  margin: 0 0 8px;
+}
+.intro p {
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: linear-gradient(180deg, #131826, #0f1320);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 16px;
+  transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease;
+  display: block;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #2a3350;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+.card h3 {
+  font-size: 18px;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 20px 28px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
 }
