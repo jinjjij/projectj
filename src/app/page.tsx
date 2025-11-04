@@ -12,6 +12,11 @@ export default function Home() {
 
       <section className="grid">
         <ServiceCard
+          title="로그인"
+          desc="로그인 페이지"
+          href="/login"
+        />
+        <ServiceCard
           title="포트폴리오"
           desc="프로젝트, 기술스택, 이력 요약"
           href="/portfolio"
@@ -27,9 +32,9 @@ export default function Home() {
           href="/schedule"
         />
         <ServiceCard
-          title="업데이트 로그"
-          desc="개발/배포 변경 이력"
-          href="/changelog"
+          title="개발 블로그"
+          desc="개발공부의 기록입니다"
+          href="/devlog"
         />
       </section>
     </main>
